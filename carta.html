@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Día de San Valentín ❤️</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    text-align:center;
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    padding-top:100px;
+}
+
+h1{
+    font-size:40px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    margin:20px;
+    transition:0.3s;
+}
+
+.si{
+    background-color:#ff4d6d;
+    color:white;
+}
+
+.no{
+    background-color:#444;
+    color:white;
+    position:relative;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#razones{
+    display:none;
+    padding:40px;
+}
+
+ul{
+    max-width:700px;
+    margin:auto;
+    text-align:left;
+    font-size:18px;
+    line-height:1.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="pregunta">
+    <h1>💖 Feliz Día de San Valentín 💖</h1>
+    <h2>¿Quieres ser mi San Valentín? 🌹</h2>
+
+    <button class="si" onclick="mostrarRazones()">Sí 💘</button>
+    <button class="no" id="btnNo">No 💔</button>
+</div>
+
+<div id="razones">
+    <h1>💌 100 cosas que me gustan de Valeria 💌</h1>
+    <ul>
+        <li>1. Carisma</li>
+        <li>2. Su actitud</li>
+        <li>3. Sus expresiones</li>
+        <li>4. Su forma folclórica</li>
+        <li>5. Parchada</li>
+        <li>6. Madre</li>
+        <li>7. Brava</li>
+        <li>8. Carácter</li>
+        <li>9. Inteligente</li>
+        <li>10. Charlona</li>
+        <li>11. Confiable</li>
+        <li>12. Coqueta</li>
+        <li>13. Risueña</li>
+        <li>14. Tranquila</li>
+        <li>15. Sus caras</li>
+        <li>16. Su sonrisa</li>
+        <li>17. Sus ojos</li>
+        <li>18. Su cabello</li>
+        <li>19. Paciente</li>
+        <li>20. Sincera</li>
+        <li>21. Leal</li>
+        <li>22. Tierna</li>
+        <li>23. Chiquita</li>
+        <li>24. Adorable</li>
+        <li>25. Hermosa</li>
+        <li>26. Auténtica</li>
+        <li>27. Única</li>
+        <li>28. Cajita de sorpresas indescribible</li>
+        <li>29. Madura</li>
+        <li>30. Bonita energía</li>
+        <li>31. Armonía</li>
+        <li>32. Estabilidad</li>
+        <li>33. Berraca</li>
+        <li>34. De ambiente</li>
+        <li>35. De buen corazón</li>
+        <li>36. Sensible-evitativa</li>
+        <li>37. Futuro</li>
+        <li>38. Cómo piensa</li>
+        <li>39. Bondadosa</li>
+        <li>40. Guerrera</li>
+        <li>41. Loca</li>
+        <li>42. Brillante</li>
+        <li>43. Mona</li>
+        <li>44. Tiene pila infinita</li>
+        <li>45. Real</li>
+        <li>46. Dramática</li>
+        <li>47. Tiene mucho ímpetu</li>
+        <li>48. Amiga</li>
+        <li>49. Buena persona</li>
+    </ul>
+
+    <p style="margin-top:40px; font-size:20px;">
+    Aún no son 100 palabras y aún me queda mucho por conocerte...  
+    pero quiero que sepas que eres una persona especial en mi vida ❤️
+    </p>
+</div>
+
+<script>
+function mostrarRazones(){
+    document.getElementById("pregunta").style.display="none";
+    document.getElementById("razones").style.display="block";
+}
+
+const btnNo = document.getElementById("btnNo");
+
+btnNo.addEventListener("mouseover", function(){
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    btnNo.style.position = "absolute";
+    btnNo.style.left = x + "px";
+    btnNo.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>
