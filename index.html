@@ -2,165 +2,139 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Feliz Día de San Valentín ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta Para Ti 💌</title>
 
 <style>
 body{
     margin:0;
     padding:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-    text-align:center;
-    color:white;
-    overflow-x:hidden;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
 }
 
 .container{
-    padding-top:80px;
-}
-
-img{
-    width:250px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:40px;
+    text-align:center;
 }
 
 button{
     padding:15px 30px;
-    font-size:20px;
+    font-size:18px;
     border:none;
-    border-radius:25px;
+    border-radius:30px;
+    background:#ff4d6d;
+    color:white;
     cursor:pointer;
-    margin:20px;
+    box-shadow:0 0 15px rgba(255,0,100,0.7);
     transition:0.3s;
-}
-
-.si{
-    background-color:#ff4d6d;
-    color:white;
-}
-
-.no{
-    background-color:#444;
-    color:white;
-    position:relative;
 }
 
 button:hover{
     transform:scale(1.1);
+    box-shadow:0 0 25px rgba(255,0,100,1);
 }
 
-#razones{
-    display:none;
-    padding:40px;
-}
-
-ul{
+.carta{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    width:80%;
     max-width:700px;
-    margin:auto;
-    text-align:left;
-    font-size:18px;
-    line-height:1.8;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(0,0,0,0.3);
+    overflow-y:auto;
+    max-height:80vh;
+    transition:0.6s ease;
+}
+
+.carta.mostrar{
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.carta h2{
+    color:#ff4d6d;
+}
+
+.carta p{
+    text-align:justify;
+    line-height:1.6;
+}
+
+.corazon{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation:flotar 6s linear infinite;
+}
+
+@keyframes flotar{
+    0%{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container" id="pregunta">
-
-    <!-- 👇 CAMBIA SOLO "index.jpg" POR EL NOMBRE DE TU IMAGEN -->
-    <img src="index.png" alt="Nuestra foto">
-
-
-
-    <h1>💖 Feliz Día de San Valentín 💖</h1>
-    <h2>¿Quieres ser mi San Valentín? 🌹</h2>
-
-    <button class="si" onclick="mostrarRazones()">Sí 💘</button>
-    <button class="no" id="btnNo">No 💔</button>
+<div class="container">
+    <button onclick="abrirCarta()">💌 Haz click para leer mi carta</button>
 </div>
 
-<div id="razones">
-    <h1>💌 100 cosas que me gustan de Valeria 💌</h1>
-    <ul>
-        <li>1. Carisma</li>
-        <li>2. Su actitud</li>
-        <li>3. Sus expresiones</li>
-        <li>4. Su forma folclórica</li>
-        <li>5. Parchada</li>
-        <li>6. Madre</li>
-        <li>7. Brava</li>
-        <li>8. Carácter</li>
-        <li>9. Inteligente</li>
-        <li>10. Charlona</li>
-        <li>11. Confiable</li>
-        <li>12. Coqueta</li>
-        <li>13. Risueña</li>
-        <li>14. Tranquila</li>
-        <li>15. Sus caras</li>
-        <li>16. Su sonrisa</li>
-        <li>17. Sus ojos</li>
-        <li>18. Su cabello</li>
-        <li>19. Paciente</li>
-        <li>20. Sincera</li>
-        <li>21. Leal</li>
-        <li>22. Tierna</li>
-        <li>23. Chiquita</li>
-        <li>24. Adorable</li>
-        <li>25. Hermosa</li>
-        <li>26. Auténtica</li>
-        <li>27. Única</li>
-        <li>28. Cajita de sorpresas indescribible</li>
-        <li>29. Madura</li>
-        <li>30. Bonita energía</li>
-        <li>31. Armonía</li>
-        <li>32. Estabilidad</li>
-        <li>33. Berraca</li>
-        <li>34. De ambiente</li>
-        <li>35. De buen corazón</li>
-        <li>36. Sensible-evitativa</li>
-        <li>37. Futuro</li>
-        <li>38. Cómo piensa</li>
-        <li>39. Bondadosa</li>
-        <li>40. Guerrera</li>
-        <li>41. Loca</li>
-        <li>42. Brillante</li>
-        <li>43. Mona</li>
-        <li>44. Tiene pila infinita</li>
-        <li>45. Real</li>
-        <li>46. Dramática</li>
-        <li>47. Tiene mucho ímpetu</li>
-        <li>48. Amiga</li>
-        <li>49. Buena persona</li>
-    </ul>
-
-    <p style="margin-top:40px; font-size:20px;">
-    Aún no son 100 palabras y aún me queda mucho por conocerte...  
-    pero quiero que sepas que eres una persona especial en mi vida ❤️
+<div class="carta" id="carta">
+    <h2>Para Ti ❤️</h2>
+    <p>
+Creo que es mi primera vez escribiendo una carta de amor; la verdad, no sé qué se comenta, pero creo que uno expresa sus sentimientos más profundos como muestra de amor, ¿no? No sé qué finalidad tiene una carta como esta, pero me nace de la necesidad de cariño que te tengo por representar de manera tangible lo que siento por ti.
+    </p>
+    <p>
+La verdad no sé en qué punto te miré diferente. Para mí solo eras una amiga, pero tu manera de ser, lo que transmites y lo que eres, me hizo verte distinto. El quererte y demostrarte cada día que eres importante para mí nació de la nada. Volverme a enamorar se siente desafiante e inquietante, pero me nació estar contigo y arriesgarme a demostrarte quién soy, dándote mi ser y mi cariño para poder construir amor entre los dos.
+    </p>
+    <p>
+No sé si lo haré bien o mal. Me pregunto si te demuestro mi amor, si me quieres, qué viste en mí, por qué yo. Son muchas preguntas que me hago y que quisiera hacerte. Y aun así, aquí estoy. Porque contigo me sentí diferente; por primera vez pude ser yo mismo y mostrar casi toda mi personalidad sin miedo.
+    </p>
+    <p>
+Aquí vamos dándole “tiempo al tiempo”, sin saber a dónde vamos, pero quiero cambiar eso. En este momento no existe nadie más especial e idóneo que tú. No sé si es el idealismo que crea mi mente, pero pase lo que pase, solo quiero amarte y darte todo de mí sin perderme.
+    </p>
+    <p>
+No quiero una vida sin ti. Quiero que te des cuenta de mi amor y que conozcas el tipo de persona que soy, que puedas ver lo que tengo para ti. La verdad es que me gustas mucho y te quiero mucho.
+    </p>
+    <p>
+Espero seguir conociéndote y que podamos formar parte de la vida del otro. Te entrego mi corazón como prueba de mi amor. ❤️
     </p>
 </div>
 
 <script>
-function mostrarRazones(){
-    document.getElementById("pregunta").style.display="none";
-    document.getElementById("razones").style.display="block";
+function abrirCarta(){
+    document.getElementById("carta").classList.add("mostrar");
 }
 
-const btnNo = document.getElementById("btnNo");
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML="❤️";
+    corazon.style.left=Math.random()*100+"vw";
+    corazon.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(corazon);
 
-btnNo.addEventListener("mouseover", function(){
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    btnNo.style.position = "absolute";
-    btnNo.style.left = x + "px";
-    btnNo.style.top = y + "px";
-});
+    setTimeout(()=>{
+        corazon.remove();
+    },6000);
+}
+
+setInterval(crearCorazon,500);
 </script>
 
 </body>
