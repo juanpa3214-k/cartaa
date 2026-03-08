@@ -2,139 +2,229 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carta Para Ti 💌</title>
+<title>Feliz Día de la Mujer</title>
 
 <style>
+
 body{
-    margin:0;
-    padding:0;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    overflow:hidden;
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#f8d3ff,#ffd6ec,#f3e5ff);
+overflow-x:hidden;
 }
 
-.container{
-    text-align:center;
+/* flores */
+
+.flor{
+position:fixed;
+top:-50px;
+font-size:26px;
+animation:caer linear infinite;
 }
+
+@keyframes caer{
+0%{transform:translateY(-50px) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* carta */
+
+.carta{
+width:650px;
+margin:80px auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h1{
+color:#8e24aa;
+font-size:40px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+color:#444;
+}
+
+/* botones */
 
 button{
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:#ff4d6d;
-    color:white;
-    cursor:pointer;
-    box-shadow:0 0 15px rgba(255,0,100,0.7);
-    transition:0.3s;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#8e24aa;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+margin:10px;
 }
 
 button:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 25px rgba(255,0,100,1);
+background:#d81b60;
+transform:scale(1.05);
 }
 
-.carta{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) scale(0);
-    width:80%;
-    max-width:700px;
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 0 30px rgba(0,0,0,0.3);
-    overflow-y:auto;
-    max-height:80vh;
-    transition:0.6s ease;
+/* test */
+
+.test{
+display:none;
+margin-top:30px;
+text-align:left;
 }
 
-.carta.mostrar{
-    transform:translate(-50%,-50%) scale(1);
+.pregunta{
+margin:20px 0;
 }
 
-.carta h2{
-    color:#ff4d6d;
+.resultado{
+display:none;
+margin-top:30px;
+padding:20px;
+border-radius:10px;
+background:#f3e5ff;
+font-size:18px;
+text-align:center;
 }
 
-.carta p{
-    text-align:justify;
-    line-height:1.6;
-}
-
-.corazon{
-    position:absolute;
-    color:white;
-    font-size:20px;
-    animation:flotar 6s linear infinite;
-}
-
-@keyframes flotar{
-    0%{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <button onclick="abrirCarta()">💌 Haz click para leer mi carta</button>
+<!-- MUSICA DESDE TU GITHUB -->
+
+<audio id="musica" loop>
+<source src="https://raw.githubusercontent.com/juanpa3214-k/cartaa/main/Los%20Kjarkas%20-%20Mi%20Gran%20Amor.mp3" type="audio/mpeg">
+</audio>
+
+<!-- flores -->
+
+<div class="flor" style="left:10%; animation-duration:8s;">🌸</div>
+<div class="flor" style="left:30%; animation-duration:10s;">💮</div>
+<div class="flor" style="left:50%; animation-duration:7s;">🌺</div>
+<div class="flor" style="left:70%; animation-duration:9s;">🌷</div>
+<div class="flor" style="left:90%; animation-duration:11s;">🌹</div>
+
+<div class="carta">
+
+<h1>💜 8 de Marzo 💜</h1>
+<h2>Día Internacional de la Mujer</h2>
+
+<p>
+Hoy celebramos la fuerza, la valentía y la belleza que existe en cada mujer.
+Su inteligencia, sensibilidad y capacidad de transformar el mundo
+son una inspiración para todos.
+</p>
+
+<p>
+Que este día recuerde lo valiosas, importantes y extraordinarias que son.
+El mundo es mejor gracias a ustedes.
+</p>
+
+<!-- botones musica -->
+
+<button onclick="reproducir()">🎵 Reproducir música</button>
+<button onclick="pausar()">⏸ Pausar música</button>
+
+<br><br>
+
+<button onclick="mostrarTest()">Realizar Test Especial 🌸</button>
+
+<div class="test" id="test">
+
+<h3>Test: ¿Qué tan increíble eres? ✨</h3>
+
+<div class="pregunta">
+1️⃣ ¿Cómo enfrentas los retos?<br>
+<input type="radio" name="p1" value="3"> Con valentía 💪<br>
+<input type="radio" name="p1" value="2"> Con paciencia 🌿<br>
+<input type="radio" name="p1" value="1"> Buscando ayuda 🤝
 </div>
 
-<div class="carta" id="carta">
-    <h2>Para Ti ❤️</h2>
-    <p>
-Creo que es mi primera vez escribiendo una carta de amor; la verdad, no sé qué se comenta, pero creo que uno expresa sus sentimientos más profundos como muestra de amor, ¿no? No sé qué finalidad tiene una carta como esta, pero me nace de la necesidad del cariño que te tengo para representar de manera tangible lo que siento por ti.
-    </p>
-    <p>
-La verdad no sé en qué punto te miré diferente. Para mí solo eras una amiga, pero tu manera de ser, lo que transmites y lo que eres, me hizo verte distinto. El quererte y demostrarte cada día que eres importante para mí nació de la nada. Volverme a enamorar se siente desafiante e inquietante, pero me nació estar contigo y arriesgarme a demostrarte quién soy, dándote mi ser y mi cariño para poder construir amor entre los dos.
-    </p>
-    <p>
-No sé si lo haré bien o mal. Me pregunto si te demuestro mi amor, si me quieres, qué viste en mí, por qué yo. Son muchas preguntas que me hago y que quisiera hacerte. Y aun así, aquí estoy. Porque contigo me sentí diferente; por primera vez pude ser yo mismo y mostrar casi toda mi personalidad sin miedo.
-    </p>
-    <p>
-Aquí vamos dándole “tiempo al tiempo”, sin saber a dónde vamos, pero quiero cambiar eso. En este momento no existe nadie más especial e idóneo que tú. No sé si es el idealismo que crea mi mente, pero pase lo que pase, solo quiero amarte y darte todo de mí sin perderme.
-    </p>
-    <p>
-No quiero una vida sin ti. Quiero que te des cuenta de mi amor y que conozcas el tipo de persona que soy, que puedas ver lo que tengo para ti. La verdad es que me gustas mucho y te quiero mucho.
-    </p>
-    <p>
-Espero seguir conociéndote y que podamos formar parte de la vida del otro. Te entrego mi corazón como prueba de mi amor. ❤️
-    </p>
+<div class="pregunta">
+2️⃣ ¿Qué cualidad te representa más?<br>
+<input type="radio" name="p2" value="3"> Liderazgo 👑<br>
+<input type="radio" name="p2" value="2"> Empatía ❤️<br>
+<input type="radio" name="p2" value="1"> Creatividad 🎨
+</div>
+
+<div class="pregunta">
+3️⃣ ¿Cómo inspiras a otros?<br>
+<input type="radio" name="p3" value="3"> Con ejemplo 🌟<br>
+<input type="radio" name="p3" value="2"> Con palabras 💬<br>
+<input type="radio" name="p3" value="1"> Con acciones 🤲
+</div>
+
+<button onclick="calcular()">Ver Resultado 🎁</button>
+
+<div class="resultado" id="resultado"></div>
+
+</div>
+
 </div>
 
 <script>
-function abrirCarta(){
-    document.getElementById("carta").classList.add("mostrar");
+
+/* iniciar musica cuando carga la pagina */
+
+window.addEventListener("load", function(){
+document.getElementById("musica").play();
+});
+
+/* botones musica */
+
+function reproducir(){
+document.getElementById("musica").play();
 }
 
-function crearCorazon(){
-    const corazon = document.createElement("div");
-    corazon.classList.add("corazon");
-    corazon.innerHTML="❤️";
-    corazon.style.left=Math.random()*100+"vw";
-    corazon.style.fontSize=(Math.random()*20+10)+"px";
-    document.body.appendChild(corazon);
-
-    setTimeout(()=>{
-        corazon.remove();
-    },6000);
+function pausar(){
+document.getElementById("musica").pause();
 }
 
-setInterval(crearCorazon,500);
+/* mostrar test */
+
+function mostrarTest(){
+document.getElementById("test").style.display="block";
+}
+
+/* calcular resultado */
+
+function calcular(){
+
+let p1=document.querySelector('input[name="p1"]:checked');
+let p2=document.querySelector('input[name="p2"]:checked');
+let p3=document.querySelector('input[name="p3"]:checked');
+
+if(!p1||!p2||!p3){
+alert("Responde todas las preguntas 🌸");
+return;
+}
+
+let total=parseInt(p1.value)+parseInt(p2.value)+parseInt(p3.value);
+
+let mensaje="";
+
+if(total>=8){
+mensaje="👑 Premio: Eres una MUJER EXTRAORDINARIA. Tu fuerza e inspiración cambian el mundo.";
+}
+else if(total>=5){
+mensaje="🌟 Premio: Eres una MUJER INSPIRADORA. Tu esencia ilumina a quienes te rodean.";
+}
+else{
+mensaje="🌸 Premio: Eres una MUJER ÚNICA. Tu forma de ser hace el mundo más hermoso.";
+}
+
+let r=document.getElementById("resultado");
+r.style.display="block";
+r.innerHTML=mensaje;
+
+}
+
 </script>
 
 </body>
