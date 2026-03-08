@@ -9,7 +9,13 @@
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:linear-gradient(135deg,#f8d3ff,#ffd6ec,#f3e5ff);
+
+background:
+radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4) 0%, transparent 40%),
+radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 0%, transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(255,255,255,0.3) 0%, transparent 40%),
+linear-gradient(135deg,#ffd6ec,#f8d3ff,#ffe4f2);
+
 overflow-x:hidden;
 }
 
@@ -96,10 +102,10 @@ text-align:center;
 
 <body>
 
-<!-- MUSICA DESDE TU GITHUB -->
+<!-- musica -->
 
 <audio id="musica" loop>
-<source src="https://raw.githubusercontent.com/juanpa3214-k/cartaa/main/Los%20Kjarkas%20-%20Mi%20Gran%20Amor.mp3" type="audio/mpeg">
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <!-- flores -->
@@ -116,14 +122,19 @@ text-align:center;
 <h2>Día Internacional de la Mujer</h2>
 
 <p>
-Hoy celebramos la fuerza, la valentía y la belleza que existe en cada mujer.
-Su inteligencia, sensibilidad y capacidad de transformar el mundo
-son una inspiración para todos.
+Para mí, hoy no se celebra; hoy se conmemora el día más importante de la vida; 
+sin ustedes, mujeres, no somos nada. No hubiéramos existido, no se crearía la vida
+y, por ende, nunca supiéramos qué es el amor, sea maternal o de pareja.
+Son los seres más bonitos que existen, y para mí valeria; eres muy importante, eres la mujer más especial para mí.
+Solo quiero que logres tus objetivos en la vida y seas muy feliz por eso y mucho más. 
+Con mucho cariño de parte de JP
 </p>
 
 <p>
-Que este día recuerde lo valiosas, importantes y extraordinarias que son.
-El mundo es mejor gracias a ustedes.
+Que este día recuerde lo valiosas, importantes y extraordinarias que son y gracias 
+por estar allí y ser mi apoyo.
+Te preparé un test sencillo; dependiendo de tu respuesta es el regalo.
+Si quiere reclamar el regalo poner dirección de entrega y enviar captura del regalo obtenido.
 </p>
 
 <!-- botones musica -->
@@ -137,7 +148,7 @@ El mundo es mejor gracias a ustedes.
 
 <div class="test" id="test">
 
-<h3>Test: ¿Qué tan increíble eres? ✨</h3>
+<h3>Test: para Valeria ✨</h3>
 
 <div class="pregunta">
 1️⃣ ¿Cómo enfrentas los retos?<br>
@@ -155,9 +166,9 @@ El mundo es mejor gracias a ustedes.
 
 <div class="pregunta">
 3️⃣ ¿Cómo inspiras a otros?<br>
-<input type="radio" name="p3" value="3"> Con ejemplo 🌟<br>
+<input type="radio" name="p3" value="3"> Con acciones 🌟<br>
 <input type="radio" name="p3" value="2"> Con palabras 💬<br>
-<input type="radio" name="p3" value="1"> Con acciones 🤲
+<input type="radio" name="p3" value="1"> Con ejemplo 🤲
 </div>
 
 <button onclick="calcular()">Ver Resultado 🎁</button>
@@ -170,7 +181,7 @@ El mundo es mejor gracias a ustedes.
 
 <script>
 
-/* iniciar musica cuando carga la pagina */
+/* iniciar musica */
 
 window.addEventListener("load", function(){
 document.getElementById("musica").play();
@@ -210,13 +221,13 @@ let total=parseInt(p1.value)+parseInt(p2.value)+parseInt(p3.value);
 let mensaje="";
 
 if(total>=8){
-mensaje="👑 Premio: Eres una MUJER EXTRAORDINARIA. Tu fuerza e inspiración cambian el mundo.";
+mensaje="👑 Premio: regalo misterioso.";
 }
 else if(total>=5){
-mensaje="🌟 Premio: Eres una MUJER INSPIRADORA. Tu esencia ilumina a quienes te rodean.";
+mensaje="🌟 Premio: alitas porque tenías ganas jsjs.";
 }
 else{
-mensaje="🌸 Premio: Eres una MUJER ÚNICA. Tu forma de ser hace el mundo más hermoso.";
+mensaje="🌸 Premio: una salchipapa.";
 }
 
 let r=document.getElementById("resultado");
